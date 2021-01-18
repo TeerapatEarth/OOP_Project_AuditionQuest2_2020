@@ -1,0 +1,27 @@
+package Model.Item.Mana;
+import Model.Character.Character;
+import Model.Item.ItemModel;
+import Model.Item.ItemUse;
+
+import java.util.ArrayList;
+public class ManaPotionXL extends ItemModel implements ItemUse{
+    public ManaPotionXL(){
+        name = "Mana Potion XL";
+        description = "Heal mana 100 MP to 1 target";
+        target_count = 1;
+        target_type = 1;
+        text_x = 525;
+        text_y = 330;
+    }
+
+    @Override
+    public void useItem(ArrayList<Character> target) {
+        for (Character c : target) {
+            if (c.getMp() + 100 >= c.getMax_mp()) {
+                c.setMp(c.getMax_mp());
+            } else {
+                c.setMp(c.getMp() + 100);
+            }
+        }
+    }
+}

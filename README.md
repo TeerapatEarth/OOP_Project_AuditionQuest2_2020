@@ -1,1 +1,2 @@
-# OOP_Project_AuditionQuest2_2020
+# OOP_Project
+Game Project for OOP subject in IT KMITL
